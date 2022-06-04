@@ -1,0 +1,315 @@
+imAdjust :: (a -> a) -> Int -> IntMap a -> IntMap a
+imAdjust = IM.adjust
+
+imAdjustWithKey :: (Int -> a -> a) -> Int -> IntMap a -> IntMap a
+imAdjustWithKey = IM.adjustWithKey
+
+imAlter :: (Maybe a -> Maybe a) -> Int -> IntMap a -> IntMap a
+imAlter = IM.alter
+
+imAlterF :: Functor f => (Maybe a -> f (Maybe a)) -> Int -> IntMap a -> f (IntMap a)
+imAlterF = IM.alterF
+
+imAssocs :: IntMap a -> [(Int, a)]
+imAssocs = IM.assocs
+
+imCompose :: IntMap c -> IntMap Int -> IntMap c
+imCompose = IM.compose
+
+imDelete :: Int -> IntMap a -> IntMap a
+imDelete = IM.delete
+
+imDeleteFindMax :: IntMap a -> ((Int, a), IntMap a)
+imDeleteFindMax = IM.deleteFindMax
+
+imDeleteFindMin :: IntMap a -> ((Int, a), IntMap a)
+imDeleteFindMin = IM.deleteFindMin
+
+imDeleteMax :: IntMap a -> IntMap a
+imDeleteMax = IM.deleteMax
+
+imDeleteMin :: IntMap a -> IntMap a
+imDeleteMin = IM.deleteMin
+
+imDifference :: IntMap a -> IntMap b -> IntMap a
+imDifference = IM.difference
+
+imDifferenceWith :: (a -> b -> Maybe a) -> IntMap a -> IntMap b -> IntMap a
+imDifferenceWith = IM.differenceWith
+
+imDifferenceWithKey :: (Int -> a -> b -> Maybe a) -> IntMap a -> IntMap b -> IntMap a
+imDifferenceWithKey = IM.differenceWithKey
+
+imDisjoint :: IntMap a -> IntMap b -> Bool
+imDisjoint = IM.disjoint
+
+imElems :: IntMap a -> [a]
+imElems = IM.elems
+
+imEmpty :: IntMap a
+imEmpty = IM.empty
+
+imFilter :: (a -> Bool) -> IntMap a -> IntMap a
+imFilter = IM.filter
+
+imFilterWithKey :: (Int -> a -> Bool) -> IntMap a -> IntMap a
+imFilterWithKey = IM.filterWithKey
+
+imFindMax :: IntMap a -> (Int, a)
+imFindMax = IM.findMax
+
+imFindMin :: IntMap a -> (Int, a)
+imFindMin = IM.findMin
+
+imFindWithDefault :: a -> Int -> IntMap a -> a
+imFindWithDefault = IM.findWithDefault
+
+imFoldMapWithKey :: Monoid m => (Int -> a -> m) -> IntMap a -> m
+imFoldMapWithKey = IM.foldMapWithKey
+
+imFoldl :: (a -> b -> a) -> a -> IntMap b -> a
+imFoldl = IM.foldl
+
+imFoldl' :: (a -> b -> a) -> a -> IntMap b -> a
+imFoldl' = IM.foldl'
+
+imFoldlWithKey :: (a -> Int -> b -> a) -> a -> IntMap b -> a
+imFoldlWithKey = IM.foldlWithKey
+
+imFoldlWithKey' :: (a -> Int -> b -> a) -> a -> IntMap b -> a
+imFoldlWithKey' = IM.foldlWithKey'
+
+imFoldr :: (a -> b -> b) -> b -> IntMap a -> b
+imFoldr = IM.foldr
+
+imFoldr' :: (a -> b -> b) -> b -> IntMap a -> b
+imFoldr' = IM.foldr'
+
+imFoldrWithKey :: (Int -> a -> b -> b) -> b -> IntMap a -> b
+imFoldrWithKey = IM.foldrWithKey
+
+imFoldrWithKey' :: (Int -> a -> b -> b) -> b -> IntMap a -> b
+imFoldrWithKey' = IM.foldrWithKey'
+
+imFromAscList :: [(Int, a)] -> IntMap a
+imFromAscList = IM.fromAscList
+
+imFromAscListWith :: (a -> a -> a) -> [(Int, a)] -> IntMap a
+imFromAscListWith = IM.fromAscListWith
+
+imFromAscListWithKey :: (Int -> a -> a -> a) -> [(Int, a)] -> IntMap a
+imFromAscListWithKey = IM.fromAscListWithKey
+
+imFromDistinctAscList :: [(Int, a)] -> IntMap a
+imFromDistinctAscList = IM.fromDistinctAscList
+
+imFromList :: [(Int, a)] -> IntMap a
+imFromList = IM.fromList
+
+imFromListWith :: (a -> a -> a) -> [(Int, a)] -> IntMap a
+imFromListWith = IM.fromListWith
+
+imFromListWithKey :: (Int -> a -> a -> a) -> [(Int, a)] -> IntMap a
+imFromListWithKey = IM.fromListWithKey
+
+imFromSet :: (Int -> a) -> IntSet -> IntMap a
+imFromSet = IM.fromSet
+
+imInsert :: Int -> a -> IntMap a -> IntMap a
+imInsert = IM.insert
+
+imInsertLookupWithKey :: (Int -> a -> a -> a) -> Int -> a -> IntMap a -> (Maybe a, IntMap a)
+imInsertLookupWithKey = IM.insertLookupWithKey
+
+imInsertWith :: (a -> a -> a) -> Int -> a -> IntMap a -> IntMap a
+imInsertWith = IM.insertWith
+
+imInsertWithKey :: (Int -> a -> a -> a) -> Int -> a -> IntMap a -> IntMap a
+imInsertWithKey = IM.insertWithKey
+
+imIntersection :: IntMap a -> IntMap b -> IntMap a
+imIntersection = IM.intersection
+
+imIntersectionWith :: (a -> b -> c) -> IntMap a -> IntMap b -> IntMap c
+imIntersectionWith = IM.intersectionWith
+
+imIntersectionWithKey :: (Int -> a -> b -> c) -> IntMap a -> IntMap b -> IntMap c
+imIntersectionWithKey = IM.intersectionWithKey
+
+imIsProperSubmapOf :: Eq a => IntMap a -> IntMap a -> Bool
+imIsProperSubmapOf = IM.isProperSubmapOf
+
+imIsProperSubmapOfBy :: (a -> b -> Bool) -> IntMap a -> IntMap b -> Bool
+imIsProperSubmapOfBy = IM.isProperSubmapOfBy
+
+imIsSubmapOf :: Eq a => IntMap a -> IntMap a -> Bool
+imIsSubmapOf = IM.isSubmapOf
+
+imIsSubmapOfBy :: (a -> b -> Bool) -> IntMap a -> IntMap b -> Bool
+imIsSubmapOfBy = IM.isSubmapOfBy
+
+imKeys :: IntMap a -> [Int]
+imKeys = IM.keys
+
+imKeysSet :: IntMap a -> IntSet
+imKeysSet = IM.keysSet
+
+imLookup :: Int -> IntMap a -> Maybe a
+imLookup = IM.lookup
+
+imLookupGE :: Int -> IntMap a -> Maybe (Int, a)
+imLookupGE = IM.lookupGE
+
+imLookupGT :: Int -> IntMap a -> Maybe (Int, a)
+imLookupGT = IM.lookupGT
+
+imLookupLE :: Int -> IntMap a -> Maybe (Int, a)
+imLookupLE = IM.lookupLE
+
+imLookupLT :: Int -> IntMap a -> Maybe (Int, a)
+imLookupLT = IM.lookupLT
+
+imLookupMax :: IntMap a -> Maybe (Int, a)
+imLookupMax = IM.lookupMax
+
+imLookupMin :: IntMap a -> Maybe (Int, a)
+imLookupMin = IM.lookupMin
+
+imMap :: (a -> b) -> IntMap a -> IntMap b
+imMap = IM.map
+
+imMapAccum :: (a -> b -> (a, c)) -> a -> IntMap b -> (a, IntMap c)
+imMapAccum = IM.mapAccum
+
+imMapAccumRWithKey :: (a -> Int -> b -> (a, c)) -> a -> IntMap b -> (a, IntMap c)
+imMapAccumRWithKey = IM.mapAccumRWithKey
+
+imMapAccumWithKey :: (a -> Int -> b -> (a, c)) -> a -> IntMap b -> (a, IntMap c)
+imMapAccumWithKey = IM.mapAccumWithKey
+
+imMapEither :: (a -> Either b c) -> IntMap a -> (IntMap b, IntMap c)
+imMapEither = IM.mapEither
+
+imMapEitherWithKey :: (Int -> a -> Either b c) -> IntMap a -> (IntMap b, IntMap c)
+imMapEitherWithKey = IM.mapEitherWithKey
+
+imMapKeys :: (Int -> Int) -> IntMap a -> IntMap a
+imMapKeys = IM.mapKeys
+
+imMapKeysMonotonic :: (Int -> Int) -> IntMap a -> IntMap a
+imMapKeysMonotonic = IM.mapKeysMonotonic
+
+imMapKeysWith :: (a -> a -> a) -> (Int -> Int) -> IntMap a -> IntMap a
+imMapKeysWith = IM.mapKeysWith
+
+imMapMaybe :: (a -> Maybe b) -> IntMap a -> IntMap b
+imMapMaybe = IM.mapMaybe
+
+imMapMaybeWithKey :: (Int -> a -> Maybe b) -> IntMap a -> IntMap b
+imMapMaybeWithKey = IM.mapMaybeWithKey
+
+imMapWithKey :: (Int -> a -> b) -> IntMap a -> IntMap b
+imMapWithKey = IM.mapWithKey
+
+imMaxView :: IntMap a -> Maybe (a, IntMap a)
+imMaxView = IM.maxView
+
+imMaxViewWithKey :: IntMap a -> Maybe ((Int, a), IntMap a)
+imMaxViewWithKey = IM.maxViewWithKey
+
+imMember :: Int -> IntMap a -> Bool
+imMember = IM.member
+
+imMergeWithKey :: (Int -> a -> b -> Maybe c) -> (IntMap a -> IntMap c) -> (IntMap b -> IntMap c) -> IntMap a -> IntMap b -> IntMap c
+imMergeWithKey = IM.mergeWithKey
+
+imMinView :: IntMap a -> Maybe (a, IntMap a)
+imMinView = IM.minView
+
+imMinViewWithKey :: IntMap a -> Maybe ((Int, a), IntMap a)
+imMinViewWithKey = IM.minViewWithKey
+
+imNotMember :: Int -> IntMap a -> Bool
+imNotMember = IM.notMember
+
+imNull :: IntMap a -> Bool
+imNull = IM.null
+
+imPartition :: (a -> Bool) -> IntMap a -> (IntMap a, IntMap a)
+imPartition = IM.partition
+
+imPartitionWithKey :: (Int -> a -> Bool) -> IntMap a -> (IntMap a, IntMap a)
+imPartitionWithKey = IM.partitionWithKey
+
+imRestrictKeys :: IntMap a -> IntSet -> IntMap a
+imRestrictKeys = IM.restrictKeys
+
+imSingleton :: Int -> a -> IntMap a
+imSingleton = IM.singleton
+
+imSize :: IntMap a -> Int
+imSize = IM.size
+
+imSplit :: Int -> IntMap a -> (IntMap a, IntMap a)
+imSplit = IM.split
+
+imSplitLookup :: Int -> IntMap a -> (IntMap a, Maybe a, IntMap a)
+imSplitLookup = IM.splitLookup
+
+imSplitRoot :: IntMap a -> [IntMap a]
+imSplitRoot = IM.splitRoot
+
+imToAscList :: IntMap a -> [(Int, a)]
+imToAscList = IM.toAscList
+
+imToDescList :: IntMap a -> [(Int, a)]
+imToDescList = IM.toDescList
+
+imToList :: IntMap a -> [(Int, a)]
+imToList = IM.toList
+
+imTraverseMaybeWithKey :: Applicative f => (Int -> a -> f (Maybe b)) -> IntMap a -> f (IntMap b)
+imTraverseMaybeWithKey = IM.traverseMaybeWithKey
+
+imTraverseWithKey :: Applicative t => (Int -> a -> t b) -> IntMap a -> t (IntMap b)
+imTraverseWithKey = IM.traverseWithKey
+
+imUnion :: IntMap a -> IntMap a -> IntMap a
+imUnion = IM.union
+
+imUnionWith :: (a -> a -> a) -> IntMap a -> IntMap a -> IntMap a
+imUnionWith = IM.unionWith
+
+imUnionWithKey :: (Int -> a -> a -> a) -> IntMap a -> IntMap a -> IntMap a
+imUnionWithKey = IM.unionWithKey
+
+imUnions :: Foldable f => f (IntMap a) -> IntMap a
+imUnions = IM.unions
+
+imUnionsWith :: Foldable f => (a -> a -> a) -> f (IntMap a) -> IntMap a
+imUnionsWith = IM.unionsWith
+
+imUpdate :: (a -> Maybe a) -> Int -> IntMap a -> IntMap a
+imUpdate = IM.update
+
+imUpdateLookupWithKey :: (Int -> a -> Maybe a) -> Int -> IntMap a -> (Maybe a, IntMap a)
+imUpdateLookupWithKey = IM.updateLookupWithKey
+
+imUpdateMax :: (a -> Maybe a) -> IntMap a -> IntMap a
+imUpdateMax = IM.updateMax
+
+imUpdateMaxWithKey :: (Int -> a -> Maybe a) -> IntMap a -> IntMap a
+imUpdateMaxWithKey = IM.updateMaxWithKey
+
+imUpdateMin :: (a -> Maybe a) -> IntMap a -> IntMap a
+imUpdateMin = IM.updateMin
+
+imUpdateMinWithKey :: (Int -> a -> Maybe a) -> IntMap a -> IntMap a
+imUpdateMinWithKey = IM.updateMinWithKey
+
+imUpdateWithKey :: (Int -> a -> Maybe a) -> Int -> IntMap a -> IntMap a
+imUpdateWithKey = IM.updateWithKey
+
+imWithoutKeys :: IntMap a -> IntSet -> IntMap a
+imWithoutKeys = IM.withoutKeys
+

@@ -1,0 +1,147 @@
+intsetAlterF :: Functor f => (Bool -> f Bool) -> Int -> IntSet -> f IntSet
+intsetAlterF = IntSet.alterF
+
+intsetDelete :: Int -> IntSet -> IntSet
+intsetDelete = IntSet.delete
+
+intsetDeleteFindMax :: IntSet -> (Int, IntSet)
+intsetDeleteFindMax = IntSet.deleteFindMax
+
+intsetDeleteFindMin :: IntSet -> (Int, IntSet)
+intsetDeleteFindMin = IntSet.deleteFindMin
+
+intsetDeleteMax :: IntSet -> IntSet
+intsetDeleteMax = IntSet.deleteMax
+
+intsetDeleteMin :: IntSet -> IntSet
+intsetDeleteMin = IntSet.deleteMin
+
+intsetDifference :: IntSet -> IntSet -> IntSet
+intsetDifference = IntSet.difference
+
+intsetDisjoint :: IntSet -> IntSet -> Bool
+intsetDisjoint = IntSet.disjoint
+
+intsetElems :: IntSet -> [Int]
+intsetElems = IntSet.elems
+
+intsetEmpty :: IntSet
+intsetEmpty = IntSet.empty
+
+intsetFilter :: (Int -> Bool) -> IntSet -> IntSet
+intsetFilter = IntSet.filter
+
+intsetFindMax :: IntSet -> Int
+intsetFindMax = IntSet.findMax
+
+intsetFindMin :: IntSet -> Int
+intsetFindMin = IntSet.findMin
+
+intsetFold :: (Int -> b -> b) -> b -> IntSet -> b
+intsetFold = IntSet.fold
+
+intsetFoldl :: (a -> Int -> a) -> a -> IntSet -> a
+intsetFoldl = IntSet.foldl
+
+intsetFoldl' :: (a -> Int -> a) -> a -> IntSet -> a
+intsetFoldl' = IntSet.foldl'
+
+intsetFoldr :: (Int -> b -> b) -> b -> IntSet -> b
+intsetFoldr = IntSet.foldr
+
+intsetFoldr' :: (Int -> b -> b) -> b -> IntSet -> b
+intsetFoldr' = IntSet.foldr'
+
+intsetFromAscList :: [Int] -> IntSet
+intsetFromAscList = IntSet.fromAscList
+
+intsetFromDistinctAscList :: [Int] -> IntSet
+intsetFromDistinctAscList = IntSet.fromDistinctAscList
+
+intsetFromList :: [Int] -> IntSet
+intsetFromList = IntSet.fromList
+
+intsetInsert :: Int -> IntSet -> IntSet
+intsetInsert = IntSet.insert
+
+intsetIntersection :: IntSet -> IntSet -> IntSet
+intsetIntersection = IntSet.intersection
+
+intsetIsProperSubsetOf :: IntSet -> IntSet -> Bool
+intsetIsProperSubsetOf = IntSet.isProperSubsetOf
+
+intsetIsSubsetOf :: IntSet -> IntSet -> Bool
+intsetIsSubsetOf = IntSet.isSubsetOf
+
+intsetLookupGE :: Int -> IntSet -> Maybe Int
+intsetLookupGE = IntSet.lookupGE
+
+intsetLookupGT :: Int -> IntSet -> Maybe Int
+intsetLookupGT = IntSet.lookupGT
+
+intsetLookupLE :: Int -> IntSet -> Maybe Int
+intsetLookupLE = IntSet.lookupLE
+
+intsetLookupLT :: Int -> IntSet -> Maybe Int
+intsetLookupLT = IntSet.lookupLT
+
+intsetMap :: (Int -> Int) -> IntSet -> IntSet
+intsetMap = IntSet.map
+
+intsetMapMonotonic :: (Int -> Int) -> IntSet -> IntSet
+intsetMapMonotonic = IntSet.mapMonotonic
+
+intsetMaxView :: IntSet -> Maybe (Int, IntSet)
+intsetMaxView = IntSet.maxView
+
+intsetMember :: Int -> IntSet -> Bool
+intsetMember = IntSet.member
+
+intsetMinView :: IntSet -> Maybe (Int, IntSet)
+intsetMinView = IntSet.minView
+
+intsetNotMember :: Int -> IntSet -> Bool
+intsetNotMember = IntSet.notMember
+
+intsetNull :: IntSet -> Bool
+intsetNull = IntSet.null
+
+intsetPartition :: (Int -> Bool) -> IntSet -> (IntSet, IntSet)
+intsetPartition = IntSet.partition
+
+intsetShowTree :: IntSet -> String
+intsetShowTree = IntSet.showTree
+
+intsetShowTreeWith :: Bool -> Bool -> IntSet -> String
+intsetShowTreeWith = IntSet.showTreeWith
+
+intsetSingleton :: Int -> IntSet
+intsetSingleton = IntSet.singleton
+
+intsetSize :: IntSet -> Int
+intsetSize = IntSet.size
+
+intsetSplit :: Int -> IntSet -> (IntSet, IntSet)
+intsetSplit = IntSet.split
+
+intsetSplitMember :: Int -> IntSet -> (IntSet, Bool, IntSet)
+intsetSplitMember = IntSet.splitMember
+
+intsetSplitRoot :: IntSet -> [IntSet]
+intsetSplitRoot = IntSet.splitRoot
+
+intsetToAscList :: IntSet -> [Int]
+intsetToAscList = IntSet.toAscList
+
+intsetToDescList :: IntSet -> [Int]
+intsetToDescList = IntSet.toDescList
+
+intsetToList :: IntSet -> [Int]
+intsetToList = IntSet.toList
+
+intsetUnion :: IntSet -> IntSet -> IntSet
+intsetUnion = IntSet.union
+
+intsetUnions :: Foldable f => f IntSet -> IntSet
+intsetUnions = IntSet.unions
+

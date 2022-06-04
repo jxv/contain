@@ -1,0 +1,49 @@
+IntSet.alterF :: Functor f => (Bool -> f Bool) -> Int -> IntSet -> f IntSet
+IntSet.delete :: Int -> IntSet -> IntSet
+IntSet.deleteFindMax :: IntSet -> (Int, IntSet)
+IntSet.deleteFindMin :: IntSet -> (Int, IntSet)
+IntSet.deleteMax :: IntSet -> IntSet
+IntSet.deleteMin :: IntSet -> IntSet
+IntSet.difference :: IntSet -> IntSet -> IntSet
+IntSet.disjoint :: IntSet -> IntSet -> Bool
+IntSet.elems :: IntSet -> [Int]
+IntSet.empty :: IntSet
+IntSet.filter :: (Int -> Bool) -> IntSet -> IntSet
+IntSet.findMax :: IntSet -> Int
+IntSet.findMin :: IntSet -> Int
+IntSet.fold :: (Int -> b -> b) -> b -> IntSet -> b
+IntSet.foldl :: (a -> Int -> a) -> a -> IntSet -> a
+IntSet.foldl' :: (a -> Int -> a) -> a -> IntSet -> a
+IntSet.foldr :: (Int -> b -> b) -> b -> IntSet -> b
+IntSet.foldr' :: (Int -> b -> b) -> b -> IntSet -> b
+IntSet.fromAscList :: [Int] -> IntSet
+IntSet.fromDistinctAscList :: [Int] -> IntSet
+IntSet.fromList :: [Int] -> IntSet
+IntSet.insert :: Int -> IntSet -> IntSet
+IntSet.intersection :: IntSet -> IntSet -> IntSet
+IntSet.isProperSubsetOf :: IntSet -> IntSet -> Bool
+IntSet.isSubsetOf :: IntSet -> IntSet -> Bool
+IntSet.lookupGE :: Int -> IntSet -> Maybe Int
+IntSet.lookupGT :: Int -> IntSet -> Maybe Int
+IntSet.lookupLE :: Int -> IntSet -> Maybe Int
+IntSet.lookupLT :: Int -> IntSet -> Maybe Int
+IntSet.map :: (Int -> Int) -> IntSet -> IntSet
+IntSet.mapMonotonic :: (Int -> Int) -> IntSet -> IntSet
+IntSet.maxView :: IntSet -> Maybe (Int, IntSet)
+IntSet.member :: Int -> IntSet -> Bool
+IntSet.minView :: IntSet -> Maybe (Int, IntSet)
+IntSet.notMember :: Int -> IntSet -> Bool
+IntSet.null :: IntSet -> Bool
+IntSet.partition :: (Int -> Bool) -> IntSet -> (IntSet, IntSet)
+IntSet.showTree :: IntSet -> String
+IntSet.showTreeWith :: Bool -> Bool -> IntSet -> String
+IntSet.singleton :: Int -> IntSet
+IntSet.size :: IntSet -> Int
+IntSet.split :: Int -> IntSet -> (IntSet, IntSet)
+IntSet.splitMember :: Int -> IntSet -> (IntSet, Bool, IntSet)
+IntSet.splitRoot :: IntSet -> [IntSet]
+IntSet.toAscList :: IntSet -> [Int]
+IntSet.toDescList :: IntSet -> [Int]
+IntSet.toList :: IntSet -> [Int]
+IntSet.union :: IntSet -> IntSet -> IntSet
+IntSet.unions :: Foldable f => f IntSet -> IntSet

@@ -1,0 +1,201 @@
+sAlterF :: (Ord a, Functor f) => (Bool -> f Bool) -> a -> Set a -> f (Set a)
+sAlterF = S.alterF
+
+sCartesianProduct :: Set a -> Set b -> Set (a, b)
+sCartesianProduct = S.cartesianProduct
+
+sDelete :: Ord a => a -> Set a -> Set a
+sDelete = S.delete
+
+sDeleteAt :: Int -> Set a -> Set a
+sDeleteAt = S.deleteAt
+
+sDeleteFindMax :: Set a -> (a, Set a)
+sDeleteFindMax = S.deleteFindMax
+
+sDeleteFindMin :: Set a -> (a, Set a)
+sDeleteFindMin = S.deleteFindMin
+
+sDeleteMax :: Set a -> Set a
+sDeleteMax = S.deleteMax
+
+sDeleteMin :: Set a -> Set a
+sDeleteMin = S.deleteMin
+
+sDifference :: Ord a => Set a -> Set a -> Set a
+sDifference = S.difference
+
+sDisjoint :: Ord a => Set a -> Set a -> Bool
+sDisjoint = S.disjoint
+
+sDisjointUnion :: Set a -> Set b -> Set (Either a b)
+sDisjointUnion = S.disjointUnion
+
+sDrop :: Int -> Set a -> Set a
+sDrop = S.drop
+
+sDropWhileAntitone :: (a -> Bool) -> Set a -> Set a
+sDropWhileAntitone = S.dropWhileAntitone
+
+sElemAt :: Int -> Set a -> a
+sElemAt = S.elemAt
+
+sElems :: Set a -> [a]
+sElems = S.elems
+
+sEmpty :: Set a
+sEmpty = S.empty
+
+sFilter :: (a -> Bool) -> Set a -> Set a
+sFilter = S.filter
+
+sFindIndex :: Ord a => a -> Set a -> Int
+sFindIndex = S.findIndex
+
+sFindMax :: Set a -> a
+sFindMax = S.findMax
+
+sFindMin :: Set a -> a
+sFindMin = S.findMin
+
+sFold :: (a -> b -> b) -> b -> Set a -> b
+sFold = S.fold
+
+sFoldl :: (a -> b -> a) -> a -> Set b -> a
+sFoldl = S.foldl
+
+sFoldl' :: (a -> b -> a) -> a -> Set b -> a
+sFoldl' = S.foldl'
+
+sFoldr :: (a -> b -> b) -> b -> Set a -> b
+sFoldr = S.foldr
+
+sFoldr' :: (a -> b -> b) -> b -> Set a -> b
+sFoldr' = S.foldr'
+
+sFromAscList :: Eq a => [a] -> Set a
+sFromAscList = S.fromAscList
+
+sFromDescList :: Eq a => [a] -> Set a
+sFromDescList = S.fromDescList
+
+sFromDistinctAscList :: [a] -> Set a
+sFromDistinctAscList = S.fromDistinctAscList
+
+sFromDistinctDescList :: [a] -> Set a
+sFromDistinctDescList = S.fromDistinctDescList
+
+sFromList :: Ord a => [a] -> Set a
+sFromList = S.fromList
+
+sInsert :: Ord a => a -> Set a -> Set a
+sInsert = S.insert
+
+sIntersection :: Ord a => Set a -> Set a -> Set a
+sIntersection = S.intersection
+
+sIsProperSubsetOf :: Ord a => Set a -> Set a -> Bool
+sIsProperSubsetOf = S.isProperSubsetOf
+
+sIsSubsetOf :: Ord a => Set a -> Set a -> Bool
+sIsSubsetOf = S.isSubsetOf
+
+sLookupGE :: Ord a => a -> Set a -> Maybe a
+sLookupGE = S.lookupGE
+
+sLookupGT :: Ord a => a -> Set a -> Maybe a
+sLookupGT = S.lookupGT
+
+sLookupIndex :: Ord a => a -> Set a -> Maybe Int
+sLookupIndex = S.lookupIndex
+
+sLookupLE :: Ord a => a -> Set a -> Maybe a
+sLookupLE = S.lookupLE
+
+sLookupLT :: Ord a => a -> Set a -> Maybe a
+sLookupLT = S.lookupLT
+
+sLookupMax :: Set a -> Maybe a
+sLookupMax = S.lookupMax
+
+sLookupMin :: Set a -> Maybe a
+sLookupMin = S.lookupMin
+
+sMap :: Ord b => (a -> b) -> Set a -> Set b
+sMap = S.map
+
+sMapMonotonic :: (a -> b) -> Set a -> Set b
+sMapMonotonic = S.mapMonotonic
+
+sMaxView :: Set a -> Maybe (a, Set a)
+sMaxView = S.maxView
+
+sMember :: Ord a => a -> Set a -> Bool
+sMember = S.member
+
+sMinView :: Set a -> Maybe (a, Set a)
+sMinView = S.minView
+
+sNotMember :: Ord a => a -> Set a -> Bool
+sNotMember = S.notMember
+
+sNull :: Set a -> Bool
+sNull = S.null
+
+sPartition :: (a -> Bool) -> Set a -> (Set a, Set a)
+sPartition = S.partition
+
+sPowerSet :: Set a -> Set (Set a)
+sPowerSet = S.powerSet
+
+sShowTree :: Show a => Set a -> String
+sShowTree = S.showTree
+
+sShowTreeWith :: Show a => Bool -> Bool -> Set a -> String
+sShowTreeWith = S.showTreeWith
+
+sSingleton :: a -> Set a
+sSingleton = S.singleton
+
+sSize :: Set a -> Int
+sSize = S.size
+
+sSpanAntitone :: (a -> Bool) -> Set a -> (Set a, Set a)
+sSpanAntitone = S.spanAntitone
+
+sSplit :: Ord a => a -> Set a -> (Set a, Set a)
+sSplit = S.split
+
+sSplitAt :: Int -> Set a -> (Set a, Set a)
+sSplitAt = S.splitAt
+
+sSplitMember :: Ord a => a -> Set a -> (Set a, Bool, Set a)
+sSplitMember = S.splitMember
+
+sSplitRoot :: Set a -> [Set a]
+sSplitRoot = S.splitRoot
+
+sTake :: Int -> Set a -> Set a
+sTake = S.take
+
+sTakeWhileAntitone :: (a -> Bool) -> Set a -> Set a
+sTakeWhileAntitone = S.takeWhileAntitone
+
+sToAscList :: Set a -> [a]
+sToAscList = S.toAscList
+
+sToDescList :: Set a -> [a]
+sToDescList = S.toDescList
+
+sToList :: Set a -> [a]
+sToList = S.toList
+
+sUnion :: Ord a => Set a -> Set a -> Set a
+sUnion = S.union
+
+sUnions :: (Foldable f, Ord a) => f (Set a) -> Set a
+sUnions = S.unions
+
+sValid :: Ord a => Set a -> Bool
+sValid = S.valid
+

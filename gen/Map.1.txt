@@ -1,0 +1,363 @@
+mAdjust :: Ord k => (a -> a) -> k -> Map k a -> Map k a
+mAdjust = M.adjust
+
+mAdjustWithKey :: Ord k => (k -> a -> a) -> k -> Map k a -> Map k a
+mAdjustWithKey = M.adjustWithKey
+
+mAlter :: Ord k => (Maybe a -> Maybe a) -> k -> Map k a -> Map k a
+mAlter = M.alter
+
+mAlterF :: (Functor f, Ord k) => (Maybe a -> f (Maybe a)) -> k -> Map k a -> f (Map k a)
+mAlterF = M.alterF
+
+mAssocs :: Map k a -> [(k, a)]
+mAssocs = M.assocs
+
+mCompose :: Ord b => Map b c -> Map a b -> Map a c
+mCompose = M.compose
+
+mDelete :: Ord k => k -> Map k a -> Map k a
+mDelete = M.delete
+
+mDeleteAt :: Int -> Map k a -> Map k a
+mDeleteAt = M.deleteAt
+
+mDeleteFindMax :: Map k a -> ((k, a), Map k a)
+mDeleteFindMax = M.deleteFindMax
+
+mDeleteFindMin :: Map k a -> ((k, a), Map k a)
+mDeleteFindMin = M.deleteFindMin
+
+mDeleteMax :: Map k a -> Map k a
+mDeleteMax = M.deleteMax
+
+mDeleteMin :: Map k a -> Map k a
+mDeleteMin = M.deleteMin
+
+mDifference :: Ord k => Map k a -> Map k b -> Map k a
+mDifference = M.difference
+
+mDifferenceWith :: Ord k => (a -> b -> Maybe a) -> Map k a -> Map k b -> Map k a
+mDifferenceWith = M.differenceWith
+
+mDifferenceWithKey :: Ord k => (k -> a -> b -> Maybe a) -> Map k a -> Map k b -> Map k a
+mDifferenceWithKey = M.differenceWithKey
+
+mDisjoint :: Ord k => Map k a -> Map k b -> Bool
+mDisjoint = M.disjoint
+
+mDrop :: Int -> Map k a -> Map k a
+mDrop = M.drop
+
+mDropWhileAntitone :: (k -> Bool) -> Map k a -> Map k a
+mDropWhileAntitone = M.dropWhileAntitone
+
+mElemAt :: Int -> Map k a -> (k, a)
+mElemAt = M.elemAt
+
+mElems :: Map k a -> [a]
+mElems = M.elems
+
+mEmpty :: Map k a
+mEmpty = M.empty
+
+mFilter :: (a -> Bool) -> Map k a -> Map k a
+mFilter = M.filter
+
+mFilterWithKey :: (k -> a -> Bool) -> Map k a -> Map k a
+mFilterWithKey = M.filterWithKey
+
+mFindIndex :: Ord k => k -> Map k a -> Int
+mFindIndex = M.findIndex
+
+mFindMax :: Map k a -> (k, a)
+mFindMax = M.findMax
+
+mFindMin :: Map k a -> (k, a)
+mFindMin = M.findMin
+
+mFindWithDefault :: Ord k => a -> k -> Map k a -> a
+mFindWithDefault = M.findWithDefault
+
+mFoldMapWithKey :: Monoid m => (k -> a -> m) -> Map k a -> m
+mFoldMapWithKey = M.foldMapWithKey
+
+mFoldl :: (a -> b -> a) -> a -> Map k b -> a
+mFoldl = M.foldl
+
+mFoldl' :: (a -> b -> a) -> a -> Map k b -> a
+mFoldl' = M.foldl'
+
+mFoldlWithKey :: (a -> k -> b -> a) -> a -> Map k b -> a
+mFoldlWithKey = M.foldlWithKey
+
+mFoldlWithKey' :: (a -> k -> b -> a) -> a -> Map k b -> a
+mFoldlWithKey' = M.foldlWithKey'
+
+mFoldr :: (a -> b -> b) -> b -> Map k a -> b
+mFoldr = M.foldr
+
+mFoldr' :: (a -> b -> b) -> b -> Map k a -> b
+mFoldr' = M.foldr'
+
+mFoldrWithKey :: (k -> a -> b -> b) -> b -> Map k a -> b
+mFoldrWithKey = M.foldrWithKey
+
+mFoldrWithKey' :: (k -> a -> b -> b) -> b -> Map k a -> b
+mFoldrWithKey' = M.foldrWithKey'
+
+mFromAscList :: Eq k => [(k, a)] -> Map k a
+mFromAscList = M.fromAscList
+
+mFromAscListWith :: Eq k => (a -> a -> a) -> [(k, a)] -> Map k a
+mFromAscListWith = M.fromAscListWith
+
+mFromAscListWithKey :: Eq k => (k -> a -> a -> a) -> [(k, a)] -> Map k a
+mFromAscListWithKey = M.fromAscListWithKey
+
+mFromDescList :: Eq k => [(k, a)] -> Map k a
+mFromDescList = M.fromDescList
+
+mFromDescListWith :: Eq k => (a -> a -> a) -> [(k, a)] -> Map k a
+mFromDescListWith = M.fromDescListWith
+
+mFromDescListWithKey :: Eq k => (k -> a -> a -> a) -> [(k, a)] -> Map k a
+mFromDescListWithKey = M.fromDescListWithKey
+
+mFromDistinctAscList :: [(k, a)] -> Map k a
+mFromDistinctAscList = M.fromDistinctAscList
+
+mFromDistinctDescList :: [(k, a)] -> Map k a
+mFromDistinctDescList = M.fromDistinctDescList
+
+mFromList :: Ord k => [(k, a)] -> Map k a
+mFromList = M.fromList
+
+mFromListWith :: Ord k => (a -> a -> a) -> [(k, a)] -> Map k a
+mFromListWith = M.fromListWith
+
+mFromListWithKey :: Ord k => (k -> a -> a -> a) -> [(k, a)] -> Map k a
+mFromListWithKey = M.fromListWithKey
+
+mFromSet :: (k -> a) -> Set k -> Map k a
+mFromSet = M.fromSet
+
+mInsert :: Ord k => k -> a -> Map k a -> Map k a
+mInsert = M.insert
+
+mInsertLookupWithKey :: Ord k => (k -> a -> a -> a) -> k -> a -> Map k a -> (Maybe a, Map k a)
+mInsertLookupWithKey = M.insertLookupWithKey
+
+mInsertWith :: Ord k => (a -> a -> a) -> k -> a -> Map k a -> Map k a
+mInsertWith = M.insertWith
+
+mInsertWithKey :: Ord k => (k -> a -> a -> a) -> k -> a -> Map k a -> Map k a
+mInsertWithKey = M.insertWithKey
+
+mIntersection :: Ord k => Map k a -> Map k b -> Map k a
+mIntersection = M.intersection
+
+mIntersectionWith :: Ord k => (a -> b -> c) -> Map k a -> Map k b -> Map k c
+mIntersectionWith = M.intersectionWith
+
+mIntersectionWithKey :: Ord k => (k -> a -> b -> c) -> Map k a -> Map k b -> Map k c
+mIntersectionWithKey = M.intersectionWithKey
+
+mIsProperSubmapOf :: (Ord k, Eq a) => Map k a -> Map k a -> Bool
+mIsProperSubmapOf = M.isProperSubmapOf
+
+mIsProperSubmapOfBy :: Ord k => (a -> b -> Bool) -> Map k a -> Map k b -> Bool
+mIsProperSubmapOfBy = M.isProperSubmapOfBy
+
+mIsSubmapOf :: (Ord k, Eq a) => Map k a -> Map k a -> Bool
+mIsSubmapOf = M.isSubmapOf
+
+mIsSubmapOfBy :: Ord k => (a -> b -> Bool) -> Map k a -> Map k b -> Bool
+mIsSubmapOfBy = M.isSubmapOfBy
+
+mKeys :: Map k a -> [k]
+mKeys = M.keys
+
+mKeysSet :: Map k a -> Set k
+mKeysSet = M.keysSet
+
+mLookup :: Ord k => k -> Map k a -> Maybe a
+mLookup = M.lookup
+
+mLookupGE :: Ord k => k -> Map k v -> Maybe (k, v)
+mLookupGE = M.lookupGE
+
+mLookupGT :: Ord k => k -> Map k v -> Maybe (k, v)
+mLookupGT = M.lookupGT
+
+mLookupIndex :: Ord k => k -> Map k a -> Maybe Int
+mLookupIndex = M.lookupIndex
+
+mLookupLE :: Ord k => k -> Map k v -> Maybe (k, v)
+mLookupLE = M.lookupLE
+
+mLookupLT :: Ord k => k -> Map k v -> Maybe (k, v)
+mLookupLT = M.lookupLT
+
+mLookupMax :: Map k a -> Maybe (k, a)
+mLookupMax = M.lookupMax
+
+mLookupMin :: Map k a -> Maybe (k, a)
+mLookupMin = M.lookupMin
+
+mMap :: (a -> b) -> Map k a -> Map k b
+mMap = M.map
+
+mMapAccum :: (a -> b -> (a, c)) -> a -> Map k b -> (a, Map k c)
+mMapAccum = M.mapAccum
+
+mMapAccumRWithKey :: (a -> k -> b -> (a, c)) -> a -> Map k b -> (a, Map k c)
+mMapAccumRWithKey = M.mapAccumRWithKey
+
+mMapAccumWithKey :: (a -> k -> b -> (a, c)) -> a -> Map k b -> (a, Map k c)
+mMapAccumWithKey = M.mapAccumWithKey
+
+mMapEither :: (a -> Either b c) -> Map k a -> (Map k b, Map k c)
+mMapEither = M.mapEither
+
+mMapEitherWithKey :: (k -> a -> Either b c) -> Map k a -> (Map k b, Map k c)
+mMapEitherWithKey = M.mapEitherWithKey
+
+mMapKeys :: Ord k2 => (k1 -> k2) -> Map k1 a -> Map k2 a
+mMapKeys = M.mapKeys
+
+mMapKeysMonotonic :: (k1 -> k2) -> Map k1 a -> Map k2 a
+mMapKeysMonotonic = M.mapKeysMonotonic
+
+mMapKeysWith :: Ord k2 => (a -> a -> a) -> (k1 -> k2) -> Map k1 a -> Map k2 a
+mMapKeysWith = M.mapKeysWith
+
+mMapMaybe :: (a -> Maybe b) -> Map k a -> Map k b
+mMapMaybe = M.mapMaybe
+
+mMapMaybeWithKey :: (k -> a -> Maybe b) -> Map k a -> Map k b
+mMapMaybeWithKey = M.mapMaybeWithKey
+
+mMapWithKey :: (k -> a -> b) -> Map k a -> Map k b
+mMapWithKey = M.mapWithKey
+
+mMaxView :: Map k a -> Maybe (a, Map k a)
+mMaxView = M.maxView
+
+mMaxViewWithKey :: Map k a -> Maybe ((k, a), Map k a)
+mMaxViewWithKey = M.maxViewWithKey
+
+mMember :: Ord k => k -> Map k a -> Bool
+mMember = M.member
+
+mMergeWithKey :: Ord k => (k -> a -> b -> Maybe c) -> (Map k a -> Map k c) -> (Map k b -> Map k c) -> Map k a -> Map k b -> Map k c
+mMergeWithKey = M.mergeWithKey
+
+mMinView :: Map k a -> Maybe (a, Map k a)
+mMinView = M.minView
+
+mMinViewWithKey :: Map k a -> Maybe ((k, a), Map k a)
+mMinViewWithKey = M.minViewWithKey
+
+mNotMember :: Ord k => k -> Map k a -> Bool
+mNotMember = M.notMember
+
+mNull :: Map k a -> Bool
+mNull = M.null
+
+mPartition :: (a -> Bool) -> Map k a -> (Map k a, Map k a)
+mPartition = M.partition
+
+mPartitionWithKey :: (k -> a -> Bool) -> Map k a -> (Map k a, Map k a)
+mPartitionWithKey = M.partitionWithKey
+
+mRestrictKeys :: Ord k => Map k a -> Set k -> Map k a
+mRestrictKeys = M.restrictKeys
+
+mSingleton :: k -> a -> Map k a
+mSingleton = M.singleton
+
+mSize :: Map k a -> Int
+mSize = M.size
+
+mSpanAntitone :: (k -> Bool) -> Map k a -> (Map k a, Map k a)
+mSpanAntitone = M.spanAntitone
+
+mSplit :: Ord k => k -> Map k a -> (Map k a, Map k a)
+mSplit = M.split
+
+mSplitAt :: Int -> Map k a -> (Map k a, Map k a)
+mSplitAt = M.splitAt
+
+mSplitLookup :: Ord k => k -> Map k a -> (Map k a, Maybe a, Map k a)
+mSplitLookup = M.splitLookup
+
+mSplitRoot :: Map k b -> [Map k b]
+mSplitRoot = M.splitRoot
+
+mTake :: Int -> Map k a -> Map k a
+mTake = M.take
+
+mTakeWhileAntitone :: (k -> Bool) -> Map k a -> Map k a
+mTakeWhileAntitone = M.takeWhileAntitone
+
+mToAscList :: Map k a -> [(k, a)]
+mToAscList = M.toAscList
+
+mToDescList :: Map k a -> [(k, a)]
+mToDescList = M.toDescList
+
+mToList :: Map k a -> [(k, a)]
+mToList = M.toList
+
+mTraverseMaybeWithKey :: Applicative f => (k -> a -> f (Maybe b)) -> Map k a -> f (Map k b)
+mTraverseMaybeWithKey = M.traverseMaybeWithKey
+
+mTraverseWithKey :: Applicative t => (k -> a -> t b) -> Map k a -> t (Map k b)
+mTraverseWithKey = M.traverseWithKey
+
+mUnion :: Ord k => Map k a -> Map k a -> Map k a
+mUnion = M.union
+
+mUnionWith :: Ord k => (a -> a -> a) -> Map k a -> Map k a -> Map k a
+mUnionWith = M.unionWith
+
+mUnionWithKey :: Ord k => (k -> a -> a -> a) -> Map k a -> Map k a -> Map k a
+mUnionWithKey = M.unionWithKey
+
+mUnions :: (Foldable f, Ord k) => f (Map k a) -> Map k a
+mUnions = M.unions
+
+mUnionsWith :: (Foldable f, Ord k) => (a -> a -> a) -> f (Map k a) -> Map k a
+mUnionsWith = M.unionsWith
+
+mUpdate :: Ord k => (a -> Maybe a) -> k -> Map k a -> Map k a
+mUpdate = M.update
+
+mUpdateAt :: (k -> a -> Maybe a) -> Int -> Map k a -> Map k a
+mUpdateAt = M.updateAt
+
+mUpdateLookupWithKey :: Ord k => (k -> a -> Maybe a) -> k -> Map k a -> (Maybe a, Map k a)
+mUpdateLookupWithKey = M.updateLookupWithKey
+
+mUpdateMax :: (a -> Maybe a) -> Map k a -> Map k a
+mUpdateMax = M.updateMax
+
+mUpdateMaxWithKey :: (k -> a -> Maybe a) -> Map k a -> Map k a
+mUpdateMaxWithKey = M.updateMaxWithKey
+
+mUpdateMin :: (a -> Maybe a) -> Map k a -> Map k a
+mUpdateMin = M.updateMin
+
+mUpdateMinWithKey :: (k -> a -> Maybe a) -> Map k a -> Map k a
+mUpdateMinWithKey = M.updateMinWithKey
+
+mUpdateWithKey :: Ord k => (k -> a -> Maybe a) -> k -> Map k a -> Map k a
+mUpdateWithKey = M.updateWithKey
+
+mValid :: Ord k => Map k a -> Bool
+mValid = M.valid
+
+mWithoutKeys :: Ord k => Map k a -> Set k -> Map k a
+mWithoutKeys = M.withoutKeys
+
